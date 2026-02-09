@@ -6,7 +6,6 @@ import shape5 from "../../../public/shape5.png";
 import shape1 from "../../../public/shape1.png";
 import shape2 from "../../../public/shape2.png";
 import banner from "../../../public/banner.png";
-import arrow from "../../../public/curve-arrow.png";
 
 const floating = {
   animate: {
@@ -22,7 +21,7 @@ const floating = {
 const Banner = () => {
   return (
     <div className="">
-      <div className="relative  bg-[#FFF9F3] lg:px-50 mx-auto px-4 sm:px-6 py-16 lg:py-28">
+      <div className="relative  bg-[#FFF9F3] lg:px-25 mx-auto px-4 sm:px-6 py-16 lg:py-28">
         <motion.div
           //   animate={{ x: [0, 10, 0] }}
           //   transition={{ duration: 5, repeat: Infinity }}
@@ -113,19 +112,6 @@ const Banner = () => {
                 <p className="text-sm font-semibold">অনলাইন সাপোর্ট</p>
                 <p className="text-xs text-blue-600">(880) 16556-0127</p>
               </div>
-            </motion.div>
-
-            {/* Arrow — LEFT ↔ RIGHT */}
-            <motion.div
-              animate={{ x: [0, 30, 0] }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute bottom-1/2 -left-10 hidden lg:block"
-            >
-              <Image src={arrow} alt="Arrow" className="w-32 h-auto" />
             </motion.div>
           </div>
         </div>

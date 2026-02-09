@@ -28,7 +28,6 @@ import {
   GraduationCap,
   Award,
   Menu,
-  Search,
   Bell,
   Library,
   Target,
@@ -37,7 +36,7 @@ import { cn } from "@/lib/utils";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
+    <header className="sticky top-0 z-50 w-full lg:px-25 border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
       <div className="container mx-auto px-4 overflow-visible">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -60,7 +59,7 @@ const Header = () => {
                   Courses
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                  <div className="grid w-100 gap-3 p-4 md:w-125 md:grid-cols-2 lg:w-150">
 
                     <ListItem
                       className="list-none"
@@ -109,7 +108,7 @@ const Header = () => {
                   Resources
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                  <ul className="grid w-100 gap-3 p-4 md:w-125 md:grid-cols-2">
                     <ListItem
                       className="list-none"
                       href="/resources/notes"
@@ -163,6 +162,13 @@ const Header = () => {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="/contact" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Contact
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
             </NavigationMenuList>
 
             {/* ✅ REQUIRED */}
@@ -171,13 +177,13 @@ const Header = () => {
 
           {/* Right Actions */}
           <div className="flex items-center space-x-2">
-            <div className="hidden lg:block relative">
+            {/* <div className="hidden lg:block relative">
               <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
               <input
                 placeholder="Search courses..."
                 className="pl-8 h-9 w-60 rounded-md border bg-background text-sm"
               />
-            </div>
+            </div> */}
 
             <Button variant="ghost" size="icon" className="relative">
               <Bell className="h-5 w-5" />
