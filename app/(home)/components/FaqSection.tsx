@@ -80,7 +80,7 @@ const FaqSection = () => {
   };
 
   return (
-    <div className="bg-[#F4F6F8] dark:bg-transparent lg:p-24 p-5 mt-8 mb-10">
+    <div className="bg-[#F4F6F8] dark:bg-transparent lg:p-24 p-5 mt-8">
       <div className="text-center mb-10">
         <h1 className="text-[52px] font-semibold text-[#252B37] dark:text-white mb-2">
           Frequently Asked Questions
