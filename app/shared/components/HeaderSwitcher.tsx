@@ -8,12 +8,12 @@ const HeaderSwitcher = () => {
   const pathname = usePathname();
 
   // Only show Header on home page
-  if (pathname === "/") {
-    return <Header />;
+  if (pathname === "/user/profile") {
+    return <Header2 />;
   }
 
   // Show Header2 on all other pages
-  return <Header2 />;
+  return <Header />;
 };
 
 export default HeaderSwitcher;

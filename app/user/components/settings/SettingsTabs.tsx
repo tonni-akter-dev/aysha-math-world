@@ -2,10 +2,8 @@
 
 import { useState } from "react";
 import ProfileTab from "./ProfileTab";
-import AccountTab from "./AccountTab";
-import SecurityTab from "./SecurityTab";
-import NotificationTab from "./NotificationTab";
 import Sidebar from "./Sidebar";
+import DashboardTab from "./DashboardTab";
 
 const SettingsTabs = () => {
     const [activeTab, setActiveTab] = useState("Dashboard");
@@ -15,11 +13,10 @@ const SettingsTabs = () => {
             {/* LEFT SIDEBAR */}
             <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
             {/* RIGHT CONTENT */}
-            <div className="flex-1 bg-white shadow-2xl border rounded-2xl  p-8">
-                {activeTab === "Dashboard" && <ProfileTab />}
-                {activeTab === "Account" && <AccountTab />}
-                {activeTab === "Security" && <SecurityTab />}
-                {activeTab === "Notifications" && <NotificationTab />}
+            <div className="flex-1 ">
+                {activeTab === "Dashboard" && <DashboardTab />}
+                {activeTab === "My Profile" && <ProfileTab />}
+
             </div>
         </div>
     );

@@ -1,5 +1,6 @@
 import About from "./(home)/components/About";
 import Banner from "./(home)/components/Banner";
+import Classes from "./(home)/components/Classes";
 import FaqSection from "./(home)/components/FaqSection";
 import Teachers from "./(home)/components/Teachers";
 import Testimonial from "./(home)/components/Testimonial";
@@ -10,6 +11,7 @@ export default function Home() {
     <>
       <Banner />
       <About />
+      <Classes/>
       <WhyChooseUs />
       <Teachers />
       <Testimonial />

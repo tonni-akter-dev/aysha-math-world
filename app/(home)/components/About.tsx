@@ -59,7 +59,7 @@ const About = () => {
           {/* Main Image */}
           <img
             src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"
-            alt="Students learning"
+            alt="শিক্ষার্থীরা শিখছে"
             className="rounded-2xl w-[85%] shadow-lg"
           />
 
@@ -74,13 +74,13 @@ const About = () => {
             <h3 className="text-3xl font-bold">
               <CountUp start={0} end={16} duration={2.5} />+
             </h3>
-            <p className="text-sm">Years of experience</p>
+            <p className="text-sm">বছরের অভিজ্ঞতা</p>
           </motion.div>
 
           {/* Secondary Image */}
           <motion.img
             src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b"
-            alt="Library study"
+            alt="লাইব্রেরি পড়াশোনা"
             className="absolute -bottom-20 right-10 w-[55%] rounded-2xl shadow-lg border-8 border-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -102,7 +102,7 @@ const About = () => {
             className="text-blue-600 font-semibold flex items-center gap-2 mb-3"
           >
             <span className="w-2 h-2 bg-blue-600 rounded-full" />
-            About EduAll
+            এডুঅল সম্পর্কে
           </motion.span>
 
           {/* Heading */}
@@ -110,7 +110,7 @@ const About = () => {
             variants={fadeUp}
             className="text-4xl font-bold text-gray-900 leading-tight mb-6"
           >
-            The Place Where You Can Achieve
+            যেখানে আপনি সাফল্য অর্জন করতে পারেন
           </motion.h2>
 
           {/* Description */}
@@ -118,9 +118,7 @@ const About = () => {
             variants={fadeUp}
             className="text-gray-600 mb-8"
           >
-            Welcome to EduAll, where learning knows no bounds. Whether you&apos;re a
-            student, professional, or lifelong learner, we provide the tools
-            and guidance to help you grow.
+            এডুঅল-এ স্বাগতম, যেখানে শিক্ষার কোনো সীমা নেই। আপনি ছাত্র, পেশাজীবী বা আজীবন শিক্ষার্থী হোন না কেন, আমরা আপনার বৃদ্ধিতে সহায়তা করার জন্য সরঞ্জাম এবং নির্দেশনা প্রদান করি।
           </motion.p>
 
           {/* ================= Mission ================= */}
@@ -143,15 +141,14 @@ const About = () => {
                 variants={textItem}
                 className="text-lg font-semibold text-gray-900"
               >
-                Our Mission
+                আমাদের লক্ষ্য
               </motion.h4>
 
               <motion.p
                 variants={textItem}
                 className="text-gray-600 text-sm"
               >
-                Driven by educators and technologists, we create a supportive
-                and innovative learning environment.
+                শিক্ষাবিদ এবং প্রযুক্তিবিদদের দ্বারা পরিচালিত, আমরা একটি সহায়ক এবং উদ্ভাবনী শিক্ষার পরিবেশ তৈরি করি।
               </motion.p>
             </motion.div>
           </motion.div>
@@ -176,15 +173,14 @@ const About = () => {
                 variants={textItem}
                 className="text-lg font-semibold text-gray-900"
               >
-                Our Vision
+                আমাদের দর্শন
               </motion.h4>
 
               <motion.p
                 variants={textItem}
                 className="text-gray-600 text-sm"
               >
-                To empower learners worldwide and accompany them every step of
-                their educational journey.
+                বিশ্বব্যাপী শিক্ষার্থীদের ক্ষমতায়ন করা এবং তাদের শিক্ষাগত যাত্রার প্রতিটি ধাপে তাদের সাথে থাকা।
               </motion.p>
             </motion.div>
           </motion.div>
@@ -195,21 +191,21 @@ const About = () => {
             className="flex items-center gap-6"
           >
             <button className="bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition">
-              Read More →
+              আরও পড়ুন →
             </button>
 
             <div className="flex items-center gap-3">
               <img
                 src="https://randomuser.me/api/portraits/men/32.jpg"
-                alt="CEO"
+                alt="সিইও"
                 className="w-10 h-10 rounded-full"
               />
               <div>
                 <p className="text-sm font-semibold text-gray-900">
-                  John McCoy
+                  জন ম্যাককয়
                 </p>
                 <p className="text-xs text-gray-500">
-                  CEO of Company
+                  কোম্পানির সিইও
                 </p>
               </div>
             </div>

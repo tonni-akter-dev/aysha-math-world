@@ -64,7 +64,7 @@ const ProfileTab = () => {
     };
 
     return (
-        <div className="w-full  p-6 md:p-8 rounded-xl  space-y-8">
+        <div className="w-full md:p-8 rounded-xl  space-y-4 bg-white shadow-2xl border  p-8">
 
             {/* --- Profile Photo --- */}
             <div>
@@ -113,40 +113,53 @@ const ProfileTab = () => {
                     />
                 </div>
             </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* --- Email --- */}
+                <div className="flex flex-col gap-1.5">
+                    <label className="text-sm font-medium text-gray-700">Gmail</label>
+                    <input
+                        type="email"
+                        className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all placeholder-gray-400 text-sm"
+                        placeholder="example@gmail.com"
+                    />
+                </div>
 
-            {/* --- Email --- */}
-            <div className="flex flex-col gap-1.5">
-                <label className="text-sm font-medium text-gray-700">Gmail</label>
-                <input
-                    type="email"
-                    className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all placeholder-gray-400 text-sm"
-                    placeholder="example@gmail.com"
-                />
+                {/* --- Phone --- */}
+                <div className="flex flex-col gap-1.5">
+                    <label className="text-sm font-medium text-gray-700">Phone</label>
+                    <input
+                        type="tel"
+                        className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all placeholder-gray-400 text-sm"
+                        placeholder="+1 (555) 000-0000"
+                    />
+                </div>
             </div>
 
-            {/* --- Phone --- */}
-            <div className="flex flex-col gap-1.5">
-                <label className="text-sm font-medium text-gray-700">Phone (Optional)</label>
-                <input
-                    type="tel"
-                    className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all placeholder-gray-400 text-sm"
-                    placeholder="+1 (555) 000-0000"
-                />
-            </div>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                {/* --- dob --- */}
+                <div className="flex flex-col gap-1.5">
+                    <label className="text-sm font-medium text-gray-700">Date of birth</label>
+                    <input
+                        type="date"
+                        className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all placeholder-gray-400 text-sm"
+                        placeholder="date of birth"
+                    />
+                </div>
 
-            {/* --- Class Selection --- */}
-            <div className="flex flex-col gap-1.5">
-                <label className="text-sm font-medium text-gray-700">Class</label>
-                <select
-                    value={selectedClass}
-                    onChange={(e) => setSelectedClass(e.target.value)}
-                    className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all text-sm bg-white"
-                >
-                    <option value="" disabled>Select Class</option>
-                    {[7, 8, 9, 10, 11, 12].map((cls) => (
-                        <option key={cls} value={cls.toString()}>Class {cls}</option>
-                    ))}
-                </select>
+                {/* --- Class Selection --- */}
+                <div className="flex flex-col gap-1.5">
+                    <label className="text-sm font-medium text-gray-700">Class</label>
+                    <select
+                        value={selectedClass}
+                        onChange={(e) => setSelectedClass(e.target.value)}
+                        className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all text-sm bg-white"
+                    >
+                        <option value="" disabled>Select Class</option>
+                        {[7, 8, 9, 10, 11, 12].map((cls) => (
+                            <option key={cls} value={cls.toString()}>Class {cls}</option>
+                        ))}
+                    </select>
+                </div>
             </div>
 
             {/* --- Conditional: Group & Batch Year (Only for 9, 10, 11, 12) --- */}
