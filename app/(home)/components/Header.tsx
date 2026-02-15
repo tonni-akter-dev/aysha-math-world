@@ -29,7 +29,7 @@ import {
   Award,
   Menu,
   Bell,
-  Library,
+  // Library,
   Target,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -60,7 +60,6 @@ const Header = () => {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="grid w-100 gap-3 p-4 md:w-125 md:grid-cols-2 lg:w-150">
-
                     <ListItem
                       className="list-none"
                       href="/courses/ssc"
@@ -102,7 +101,7 @@ const Header = () => {
               </NavigationMenuItem>
 
               {/* Resources */}
-              <NavigationMenuItem>
+              {/* <NavigationMenuItem>
                 <NavigationMenuTrigger>
                   <Library className="mr-2 h-4 w-4" />
                   Resources
@@ -139,34 +138,28 @@ const Header = () => {
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
 
-              <NavigationMenuItem>
-                <Link href="/about" legacyBehavior passHref>
+              {/* <NavigationMenuItem>
+                <Link href="/about">
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     Live Classes
                   </NavigationMenuLink>
                 </Link>
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
               <NavigationMenuItem>
-                <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                <Link href="/about">
                     About
-                  </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                <Link href="/about">
                     Blog
-                  </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/contact" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                <Link href="/contact">
                     Contact
-                  </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
@@ -221,32 +214,34 @@ const Header = () => {
 };
 
 /* Helper */
-interface ListItemProps extends Omit<React.ComponentPropsWithoutRef<"a">, "title"> {
+interface ListItemProps extends Omit<
+  React.ComponentPropsWithoutRef<"a">,
+  "title"
+> {
   title?: React.ReactNode;
 }
 
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  ListItemProps
->(({ className, title, children, ...props }, ref) => (
-  <li className="list-none">
-    <NavigationMenuLink asChild>
-      <a
-        ref={ref}
-        className={cn(
-          "block rounded-md p-3 transition-colors hover:bg-accent hover:text-accent-foreground",
-          className,
-        )}
-        {...props}
-      >
-        <div className="text-sm font-medium flex items-center gap-2">
-          {title}
-        </div>
-        <p className="text-sm text-muted-foreground">{children}</p>
-      </a>
-    </NavigationMenuLink>
-  </li>
-));
+const ListItem = React.forwardRef<React.ElementRef<"a">, ListItemProps>(
+  ({ className, title, children, ...props }, ref) => (
+    <li className="list-none">
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block rounded-md p-3 transition-colors hover:bg-accent hover:text-accent-foreground",
+            className,
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium flex items-center gap-2">
+            {title}
+          </div>
+          <p className="text-sm text-muted-foreground">{children}</p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  ),
+);
 
 ListItem.displayName = "ListItem";
 

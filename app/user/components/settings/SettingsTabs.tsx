@@ -4,6 +4,7 @@ import { useState } from "react";
 import ProfileTab from "./ProfileTab";
 import Sidebar from "./Sidebar";
 import DashboardTab from "./DashboardTab";
+import EnrolledCourses from "./EnrolledCourses";
 
 const SettingsTabs = () => {
     const [activeTab, setActiveTab] = useState("Dashboard");
@@ -16,7 +17,8 @@ const SettingsTabs = () => {
             <div className="flex-1 ">
                 {activeTab === "Dashboard" && <DashboardTab />}
                 {activeTab === "My Profile" && <ProfileTab />}
-
+                {activeTab === "Enrolled Courses" && <EnrolledCourses />}
+                {/* {activeTab === "Wishlist" && <EnrolledCourses />} */}
             </div>
         </div>
     );

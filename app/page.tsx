@@ -10,8 +10,9 @@ export default function Home() {
   return (
     <>
       <Banner />
+      {/* <Admission /> */}
+      <Classes />
       <About />
-      <Classes/>
       <WhyChooseUs />
       <Teachers />
       <Testimonial />

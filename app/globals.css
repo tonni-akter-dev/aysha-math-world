@@ -172,3 +172,7 @@
   height: 160px;
   bottom: 46%;
 }
+
+button {
+  cursor: pointer;
+}

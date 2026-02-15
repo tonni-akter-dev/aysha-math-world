@@ -89,13 +89,9 @@ const DashboardTab = () => {
             </div>
           ))}
         </div>
-
-        {/* Recent Activity (Extra section to complete the dashboard look) */}
         <div className="mt-10">
           <h2 className="text-xl font-bold text-gray-800 mb-6">In Progress Course List</h2>
-
-          <div className="space-y-4">
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+            <div className="space-y-4 bg-white rounded-xl shadow-sm border border-gray-100 p-6">
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
                 <div>
                   <span className="text-blue-600 text-xs font-bold uppercase tracking-wide mb-1 block">
@@ -121,7 +117,7 @@ const DashboardTab = () => {
                   />
                   <div>
                     <p className="text-xs text-gray-500">Instructor</p>
-                    <p className="text-sm font-bold text-gray-900">sdfdf</p>
+                    <p className="text-sm font-bold text-gray-900">Aysha</p>
                   </div>
                 </div>
               </div>
@@ -151,47 +147,7 @@ const DashboardTab = () => {
                 </button>
               </div>
             </div>
-
-
-            {/* Course Card 2 */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 hover:shadow-md transition-shadow duration-300">
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-lg shrink-0">
-                    WD
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 text-lg">Web Development</h4>
-                    <p className="text-sm text-gray-500">Chapter 2: CSS Grid</p>
-                  </div>
-                </div>
-
-                <span className="px-3 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded-full uppercase tracking-wide whitespace-nowrap">
-                  In Progress
-                </span>
-              </div>
-
-              <div className="relative pt-1">
-                <div className="flex mb-2 items-center justify-between">
-                  <div>
-                    <span className="text-xs font-semibold inline-block text-blue-600">
-                      Progress
-                    </span>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-xs font-semibold inline-block text-blue-600">
-                      35%
-                    </span>
-                  </div>
-                </div>
-                <div className="overflow-hidden h-2 mb-4 text-xs flex rounded-full bg-gray-200">
-                  <div style={{ width: "35%" }} className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-600 transition-all duration-500"></div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-
       </div>
     </div>
   );
