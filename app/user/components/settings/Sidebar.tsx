@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import profile from '../../../../public/profile.png'
+import profile from "../../../../public/profile.png";
 import Image from "next/image";
 import {
   LayoutDashboard,
@@ -8,7 +8,6 @@ import {
   BookOpen,
   HelpCircle,
   FileText,
-  Settings,
 } from "lucide-react";
 
 const menuItems = [
@@ -17,10 +16,10 @@ const menuItems = [
   { label: "Enrolled Courses", icon: BookOpen },
   { label: "Quiz Attempts", icon: HelpCircle },
   { label: "Assignment", icon: FileText },
-  { label: "Settings", icon: Settings },
+  { label: "My Achievements", icon: FileText },
 ];
 
-export default function Sidebar({ activeTab, setActiveTab }:any) {
+export default function Sidebar({ activeTab, setActiveTab }: any) {
   return (
     <div className="w-70 rounded-2xl bg-white shadow-2xl border min-h-screen px-6 py-8">
       {/* Profile */}

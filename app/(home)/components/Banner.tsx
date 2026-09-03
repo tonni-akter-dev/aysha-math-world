@@ -21,7 +21,7 @@ const floating = {
 const Banner = () => {
   return (
     <div className="">
-      <div className="relative  bg-[#FFF9F3] lg:px-25 mx-auto px-4 sm:px-6 py-16 lg:py-28">
+      <div className="relative  bg-white lg:px-25 mx-auto px-4 sm:px-6 py-16 lg:py-28">
         <motion.div
           //   animate={{ x: [0, 10, 0] }}
           //   transition={{ duration: 5, repeat: Infinity }}

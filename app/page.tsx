@@ -2,7 +2,6 @@ import About from "./(home)/components/About";
 import Banner from "./(home)/components/Banner";
 import Classes from "./(home)/components/Classes";
 import FaqSection from "./(home)/components/FaqSection";
-import Teachers from "./(home)/components/Teachers";
 import Testimonial from "./(home)/components/Testimonial";
 import WhyChooseUs from "./(home)/components/WhyChooseUs";
 
@@ -14,7 +13,7 @@ export default function Home() {
       <Classes />
       <About />
       <WhyChooseUs />
-      <Teachers />
+      {/* <Teachers /> */}
       <Testimonial />
       <FaqSection />
     </>

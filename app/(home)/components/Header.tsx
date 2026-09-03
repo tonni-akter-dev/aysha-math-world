@@ -1,248 +1,244 @@
+
 "use client";
 
-import React from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-
 import {
   BookOpen,
-  GraduationCap,
-  Award,
   Menu,
   Bell,
-  // Library,
-  Target,
+  ChevronDown,
+  X,
+  User,
+  LogOut,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
+import logo from "@/public/logo.png";
+import Image from "next/image";
 
 const Header = () => {
+  const [profileOpen, setProfileOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
-    <header className="sticky top-0 z-50 w-full lg:px-25 border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
-      <div className="container mx-auto px-4 overflow-visible">
+    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur-md">
+      <div className="mx-auto container ">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-r from-blue-600 to-purple-600">
-              <GraduationCap className="h-5 w-5 text-white" />
-            </div>
-            <span className="hidden font-bold text-xl sm:inline-block">
-              EduLMS Pro
-            </span>
+
+          <Link
+            href="/"
+            className="flex size-50 items-center gap-2"
+          >
+            <Image src={logo} alt="Logo" />
           </Link>
 
-          {/* Desktop Navigation */}
-          <NavigationMenu className="hidden md:flex">
-            <NavigationMenuList>
-              {/* Courses */}
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>
-                  <BookOpen className="mr-2 h-4 w-4" />
-                  Courses
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="grid w-100 gap-3 p-4 md:w-125 md:grid-cols-2 lg:w-150">
-                    <ListItem
-                      className="list-none"
-                      href="/courses/ssc"
-                      title={
-                        <span className="flex items-center gap-2">
-                          <BookOpen className="h-4 w-4 text-blue-600" />
-                          SSC Courses
-                        </span>
-                      }
-                    >
-                      Class 9–10 complete syllabus
-                    </ListItem>
+          {/* ================= DESKTOP NAV ================= */}
+          <nav className="hidden items-center gap-1 md:flex">
 
-                    <ListItem
-                      href="/courses/hsc"
-                      title={
-                        <span className="flex items-center gap-2">
-                          <Award className="h-4 w-4 text-purple-600" />
-                          HSC Courses
-                        </span>
-                      }
-                    >
-                      Class 11–12 specialized streams
-                    </ListItem>
+            {/* About */}
+            <Link
+              href="/courses"
+              className="rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-blue-600"
+            >
+              Courses
+            </Link>
+            <Link
+              href="/about"
+              className="rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-blue-600"
+            >
+              About
+            </Link>
 
-                    <ListItem
-                      href="/courses/test-series"
-                      title={
-                        <span className="flex items-center gap-2">
-                          <Target className="h-4 w-4 text-green-600" />
-                          Test Series
-                        </span>
-                      }
-                    >
-                      Mock tests & practice papers
-                    </ListItem>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+            {/* Blog */}
+            <Link
+              href="/blog"
+              className="rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-blue-600"
+            >
+              Blog
+            </Link>
 
-              {/* Resources */}
-              {/* <NavigationMenuItem>
-                <NavigationMenuTrigger>
-                  <Library className="mr-2 h-4 w-4" />
-                  Resources
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-100 gap-3 p-4 md:w-125 md:grid-cols-2">
-                    <ListItem
-                      className="list-none"
-                      href="/resources/notes"
-                      title="Study Notes"
-                    >
-                      Comprehensive notes & summaries
-                    </ListItem>
-                    <ListItem
-                      className="list-none"
-                      href="/resources/videos"
-                      title="Video Lectures"
-                    >
-                      HD video lessons
-                    </ListItem>
-                    <ListItem
-                      className="list-none"
-                      href="/resources/papers"
-                      title="Previous Papers"
-                    >
-                      Past exam papers
-                    </ListItem>
-                    <ListItem
-                      className="list-none"
-                      href="/resources/sample"
-                      title="Sample Papers"
-                    >
-                      Practice papers
-                    </ListItem>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem> */}
+            {/* Contact */}
+            <Link
+              href="/contact"
+              className="rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-blue-600"
+            >
+              Contact
+            </Link>
+          </nav>
 
-              {/* <NavigationMenuItem>
-                <Link href="/about">
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Live Classes
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem> */}
-              <NavigationMenuItem>
-                <Link href="/about">
-                    About
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/about">
-                    Blog
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/contact">
-                    Contact
-                </Link>
-              </NavigationMenuItem>
-            </NavigationMenuList>
+          {/* ================= RIGHT ACTIONS ================= */}
+          <div className="flex items-center gap-2">
 
-            {/* ✅ REQUIRED */}
-            <NavigationMenuViewport />
-          </NavigationMenu>
-
-          {/* Right Actions */}
-          <div className="flex items-center space-x-2">
-            {/* <div className="hidden lg:block relative">
-              <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
-              <input
-                placeholder="Search courses..."
-                className="pl-8 h-9 w-60 rounded-md border bg-background text-sm"
-              />
-            </div> */}
-
-            <Button variant="ghost" size="icon" className="relative">
+            {/* Notification */}
+            <button
+              type="button"
+              className="relative flex h-10 w-10 items-center justify-center rounded-lg text-gray-600 transition hover:bg-gray-100 hover:text-blue-600"
+            >
               <Bell className="h-5 w-5" />
-              <Badge className="absolute -top-1 -right-1 h-5 w-5 p-0 text-xs">
+
+              <span className="absolute right-1 top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-red-500 px-1 text-[10px] font-bold text-white">
                 3
-              </Badge>
-            </Button>
+              </span>
+            </button>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Avatar className="h-8 w-8">
-                    <AvatarFallback>ST</AvatarFallback>
-                  </Avatar>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem>My Profile</DropdownMenuItem>
-                <DropdownMenuItem>My Courses</DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem className="text-red-600">
-                  Log out
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            {/* Profile */}
+            <div className="relative hidden md:block">
+              <button
+                type="button"
+                onClick={() => setProfileOpen(!profileOpen)}
+                className="flex items-center gap-2 rounded-lg p-1.5 transition hover:bg-gray-100"
+              >
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-linear-to-r from-blue-600 to-purple-600 text-sm font-semibold text-white">
+                  ST
+                </div>
 
-            <Button variant="ghost" size="icon" className="md:hidden">
-              <Menu />
-            </Button>
+                <ChevronDown
+                  className={`h-4 w-4 text-gray-500 transition-transform ${
+                    profileOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {profileOpen && (
+                <>
+                  <div
+                    className="fixed inset-0 z-40"
+                    onClick={() => setProfileOpen(false)}
+                  />
+
+                  <div className="absolute right-0 top-full z-50 mt-2 w-52 rounded-xl border border-gray-200 bg-white p-2 shadow-xl">
+
+                    <div className="border-b border-gray-100 px-3 py-3">
+                      <p className="font-semibold text-gray-900">
+                        Student
+                      </p>
+
+                      <p className="text-xs text-gray-500">
+                        student@example.com
+                      </p>
+                    </div>
+
+                    <Link
+                      href="/user/profile"
+                      onClick={() => setProfileOpen(false)}
+                      className="mt-1 flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-gray-700 transition hover:bg-gray-100"
+                    >
+                      <User className="h-4 w-4" />
+                      My Profile
+                    </Link>
+
+                    <Link
+                      href="/my-courses"
+                      onClick={() => setProfileOpen(false)}
+                      className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-gray-700 transition hover:bg-gray-100"
+                    >
+                      <BookOpen className="h-4 w-4" />
+                      My Courses
+                    </Link>
+
+                    <button
+                      type="button"
+                      className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-red-600 transition hover:bg-red-50"
+                    >
+                      <LogOut className="h-4 w-4" />
+                      Log out
+                    </button>
+                  </div>
+                </>
+              )}
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              type="button"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="flex h-10 w-10 items-center justify-center rounded-lg text-gray-700 transition hover:bg-gray-100 md:hidden"
+            >
+              {mobileOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+            </button>
           </div>
         </div>
+
+        {/* ================= MOBILE MENU ================= */}
+        {mobileOpen && (
+          <div className="border-t border-gray-100 py-4 md:hidden">
+
+            <nav className="flex flex-col gap-1">
+              <Link
+                href="/courses"
+                onClick={() => setMobileOpen(false)}
+                className="rounded-lg px-3 py-3 text-sm font-medium text-gray-700 hover:bg-gray-100"
+              >
+                Courses
+              </Link>
+              <Link
+                href="/about"
+                onClick={() => setMobileOpen(false)}
+                className="rounded-lg px-3 py-3 text-sm font-medium text-gray-700 hover:bg-gray-100"
+              >
+                About
+              </Link>
+
+              {/* Blog */}
+              <Link
+                href="/blog"
+                onClick={() => setMobileOpen(false)}
+                className="rounded-lg px-3 py-3 text-sm font-medium text-gray-700 hover:bg-gray-100"
+              >
+                Blog
+              </Link>
+
+              {/* Contact */}
+              <Link
+                href="/contact"
+                onClick={() => setMobileOpen(false)}
+                className="rounded-lg px-3 py-3 text-sm font-medium text-gray-700 hover:bg-gray-100"
+              >
+                Contact
+              </Link>
+
+            </nav>
+
+            {/* Mobile Profile Section */}
+            <div className="mt-4 border-t border-gray-100 pt-4">
+
+              <Link
+                href="/profile"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-3 rounded-lg px-3 py-3 hover:bg-gray-100"
+              >
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-linear-to-r from-blue-600 to-purple-600 text-sm font-semibold text-white">
+                  ST
+                </div>
+
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">
+                    Student
+                  </p>
+
+                  <p className="text-xs text-gray-500">
+                    My Profile
+                  </p>
+                </div>
+              </Link>
+
+              <button
+                type="button"
+                className="mt-1 flex w-full items-center gap-3 rounded-lg px-3 py-3 text-sm text-red-600 hover:bg-red-50"
+              >
+                <LogOut className="h-4 w-4" />
+                Log out
+              </button>
+
+            </div>
+          </div>
+        )}
       </div>
     </header>
   );
 };
-
-/* Helper */
-interface ListItemProps extends Omit<
-  React.ComponentPropsWithoutRef<"a">,
-  "title"
-> {
-  title?: React.ReactNode;
-}
-
-const ListItem = React.forwardRef<React.ElementRef<"a">, ListItemProps>(
-  ({ className, title, children, ...props }, ref) => (
-    <li className="list-none">
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block rounded-md p-3 transition-colors hover:bg-accent hover:text-accent-foreground",
-            className,
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium flex items-center gap-2">
-            {title}
-          </div>
-          <p className="text-sm text-muted-foreground">{children}</p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  ),
-);
-
-ListItem.displayName = "ListItem";
 
 export default Header;

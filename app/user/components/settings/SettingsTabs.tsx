@@ -5,23 +5,26 @@ import ProfileTab from "./ProfileTab";
 import Sidebar from "./Sidebar";
 import DashboardTab from "./DashboardTab";
 import EnrolledCourses from "./EnrolledCourses";
+import Assignments from "./Assignments";
+import Achievements from "./Achievements";
 
 const SettingsTabs = () => {
-    const [activeTab, setActiveTab] = useState("Dashboard");
+  const [activeTab, setActiveTab] = useState("Dashboard");
 
-    return (
-        <div className="-mt-25 mb-40 relative z-50 flex gap-10">
-            {/* LEFT SIDEBAR */}
-            <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
-            {/* RIGHT CONTENT */}
-            <div className="flex-1 ">
-                {activeTab === "Dashboard" && <DashboardTab />}
-                {activeTab === "My Profile" && <ProfileTab />}
-                {activeTab === "Enrolled Courses" && <EnrolledCourses />}
-                {/* {activeTab === "Wishlist" && <EnrolledCourses />} */}
-            </div>
-        </div>
-    );
+  return (
+    <div className="-mt-25 mb-40 relative z-50 flex gap-10">
+      {/* LEFT SIDEBAR */}
+      <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+      {/* RIGHT CONTENT */}
+      <div className="flex-1 ">
+        {activeTab === "Dashboard" && <DashboardTab />}
+        {activeTab === "My Profile" && <ProfileTab />}
+        {activeTab === "Enrolled Courses" && <EnrolledCourses />}
+       {activeTab === "Assignment" && <Assignments />}
+       {activeTab === "My Achievements" && <Achievements />}
+      </div>
+    </div>
+  );
 };
 
 export default SettingsTabs;
