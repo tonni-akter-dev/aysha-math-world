@@ -20,8 +20,8 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur-md">
-      <div className="mx-auto container ">
+    <header className="fixed pt-10 top-0 z-50 w-full px-20  backdrop-blur-md">
+      <div className="mx-auto container  rounded-full border border-gray-200 bg-white/95">
         <div className="flex h-16 items-center justify-between">
 
           <Link

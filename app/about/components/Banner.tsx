@@ -25,7 +25,9 @@ const Banner = ({
   ],
 }: BannerProps) => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#f0f6ff] via-[#f7faff] to-[#ffffff] py-20 md:py-24">
+    // Gradient টা হালকা নীলেই শেষ হবে, সাথে নিচে border-b দেওয়া হয়েছে যাতে আলাদা বোঝা যায়
+    <section className="pt-50 pb-25 relative overflow-hidden bg-linear-to-b from-[#dbeafe] via-[#e0f2fe] to-[#f0f6ff] border-b border-blue-100">
+      
       {/* ---------------- BACKGROUND SHAPES & ANIMATIONS ---------------- */}
 
       {/* Top Left: Orange Ring */}

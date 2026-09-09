@@ -29,8 +29,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <HeaderSwitcher />
-        {children}
+        <div className="fixed top-0 left-0 w-full z-50">
+          <HeaderSwitcher />
+        </div>
+        
+        <div>
+          {children}
+        </div>
         <Footer />
       </body>
     </html>

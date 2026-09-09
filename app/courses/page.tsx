@@ -7,6 +7,7 @@ import { classOptions, demoCourses } from "@/utils/data";
 import { Course } from "@/utils/type";
 import Image from "next/image";
 import Link from "next/link";
+import Banner from "../about/components/Banner";
 
 const Courses = () => {
   const [selectedClass, setSelectedClass] = useState("All Classes");
@@ -23,7 +24,11 @@ const Courses = () => {
 
   return (
     <>
-      <section className="bg-[#fafafa] py-10 md:py-14">
+       <Banner
+        title="Courses"
+        breadcrumb={[{ label: "Home", href: "/" }, { label: "Courses" }]}
+      />
+      <section className="bg-[#fafafa] py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>

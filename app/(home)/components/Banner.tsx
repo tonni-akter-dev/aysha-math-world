@@ -1,11 +1,12 @@
 "use client";
 import { motion, easeInOut } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, Phone, Users } from "lucide-react";
+import {  Phone, Users } from "lucide-react";
 import shape5 from "../../../public/shape5.png";
 import shape1 from "../../../public/shape1.png";
 import shape2 from "../../../public/shape2.png";
 import banner from "../../../public/banner.png";
+import Link from "next/link";
 
 const floating = {
   animate: {
@@ -20,13 +21,9 @@ const floating = {
 
 const Banner = () => {
   return (
-    <div className="">
-      <div className="relative  bg-white lg:px-25 mx-auto px-4 sm:px-6 py-16 lg:py-28">
-        <motion.div
-          //   animate={{ x: [0, 10, 0] }}
-          //   transition={{ duration: 5, repeat: Infinity }}
-          className="absolute bottom-10 left-0"
-        >
+    <div className="pt-20">
+      <div className="relative  bg-white lg:px-25 mx-auto px-4 sm:px-6 py-25 lg:py-28">
+        <motion.div className="absolute bottom-10 left-0">
           <Image src={shape2} alt="shape2" />
         </motion.div>
         <motion.div
@@ -57,13 +54,18 @@ const Banner = () => {
             </p>
 
             <div className="flex gap-4 mt-8">
-              <button className="bg-blue-600 text-white px-6 py-3 rounded-full flex items-center gap-2 hover:bg-blue-700 transition">
-                এখনই এনরোল করুন <ArrowRight size={18} />
-              </button>
+          
+              <Link href="/courses">
+                <button className="border border-blue-600 text-blue-600 px-6 py-3 rounded-full hover:bg-blue-50 transition">
+                  আমাদের কোর্সসমূহ
+                </button>
+              </Link>
 
+           <Link href="/about">
               <button className="border border-blue-600 text-blue-600 px-6 py-3 rounded-full hover:bg-blue-50 transition">
                 আমাদের সম্পর্কে
               </button>
+           </Link>
             </div>
           </div>
 
@@ -73,8 +75,8 @@ const Banner = () => {
               src={banner}
               alt="Student"
               width={600}
-              height={520}
-              className="rounded-2xl object-cover"
+              height={400}
+              className="rounded-2xl w-full h-100 object-contain "
             />
             {/* shape5 — ROTATING */}
             <motion.div
@@ -92,8 +94,7 @@ const Banner = () => {
             {/* Enrolled Students */}
             <motion.div
               {...floating}
-              className="absolute top-6 left-0 bg-white shadow-lg rounded-xl px-4 py-3 flex items-center gap-3"
-            >
+              className="absolute top-6 left-0 bg-white shadow-lg rounded-xl px-4 py-3 flex items-center gap-3">
               <Users className="text-blue-600" size={20} />
               <div>
                 <p className="font-semibold text-sm">৩৬হাজার+</p>
@@ -105,8 +106,7 @@ const Banner = () => {
             <motion.div
               animate={{ x: [0, 10, 0] }}
               transition={{ duration: 5, repeat: Infinity }}
-              className="absolute bottom-30 right-0 bg-white shadow-lg rounded-xl px-4 py-3 flex items-center gap-3"
-            >
+              className="absolute bottom-10 right-0 bg-white shadow-lg rounded-xl px-4 py-3 flex items-center gap-3">
               <Phone className="text-green-600" size={18} />
               <div>
                 <p className="text-sm font-semibold">অনলাইন সাপোর্ট</p>
